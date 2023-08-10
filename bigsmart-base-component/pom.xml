@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>bigsmart</artifactId>
+        <groupId>cn.bigsmart</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>bigsmart-base-component</artifactId>
+    <packaging>pom</packaging>
+
+    <!-- 基础架构组件库 -->
+    <modules>
+        <!--项目基础组件-->
+        <module>bigsmart-base-spring-boot-starter</module>
+        <!--设计模式公共组件-->
+        <module>bigsmart-designpattern-spring-boot-starter</module>
+        <!--项目公共工具组件-->
+        <module>bigsmart-common</module>
+    </modules>
+
+</project>
