@@ -22,6 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud-alibaba.version>2.2.9.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
@@ -35,6 +36,7 @@
         <mysql-connector.version>8.0.29</mysql-connector.version>
         <mybatis.version>2.2.2</mybatis.version>
         <connection-pool-druid.version>1.2.11</connection-pool-druid.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
     </properties>
 
     <dependencyManagement>
@@ -63,7 +65,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- commons-lang3 -->
+            <!-- 常用工具：commons-lang3 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
@@ -98,6 +100,17 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
+            </dependency>
+            <!--对象复制工具-->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
