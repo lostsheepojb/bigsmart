@@ -24,6 +24,7 @@ public interface StudentMapper {
     @Mapping(target = "id", source = "id")
     //属性名称不同的映射
     @Mapping(target = "studentName", source = "name")
+    @Mapping(target = "dateTimeStr", source = "dateTime")
     //忽略字段复制的映射 ignore
     @Mapping(target = "address", ignore = true)
     //时间格式化的映射 dateFormat
@@ -31,6 +32,6 @@ public interface StudentMapper {
     //数字格式化的映射 numberFormat
     @Mapping(target = "heightStr", source = "height", numberFormat = "#0.00")
     //自定义格式化的映射 qualifiedByName
-    @Mapping(target = "birthDateJsonStr", source = "birthDate", qualifiedByName = "toJsonString")
+    @Mapping(target = "addressJsonStr", source = "address", qualifiedByName = "toJsonString")
     StudentVO toStudentVO2(StudentDO studentDO);
 }

@@ -2,6 +2,7 @@ package mystruct;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author cjj
@@ -16,6 +17,7 @@ public class MapstructTest {
         studentDO.setName("张三");
         studentDO.setBirthDate(LocalDate.now());
         studentDO.setHeight(new BigDecimal("169.557"));
+        studentDO.setDateTime(LocalDateTime.now());
         Address address = new Address();
         address.setId(1);
         address.setCode("00001");

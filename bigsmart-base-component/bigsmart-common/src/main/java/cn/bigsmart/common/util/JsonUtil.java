@@ -10,10 +10,13 @@ import java.time.format.DateTimeFormatter;
 /**
  * @author cjj
  * @date 2023/8/11 14:17
- * @description json工具类，基于Gson封装，封装的目的是是项目使用统一配置的Gson，也方便日后json工具的切换使用
+ * @description json工具类，基于Gson封装，封装目的是项目统一Json序列化/反序列化规则，也方便日后json工具的切换
  **/
 public class JsonUtil {
 
+    /**
+     * 私有化Json工具类，避免被外部修改Json转换规则
+     */
     private final static Gson JSONS;
 
     static {
@@ -46,7 +49,6 @@ public class JsonUtil {
                 .registerTypeAdapter(LocalDate.class, DATE_DESERIALIZER)
                 .create();
     }
-
 
     /**
      * 对象转Json字符串

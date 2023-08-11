@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author cjj
@@ -16,5 +17,6 @@ public class StudentDO {
     private String name;
     private LocalDate birthDate;
     private BigDecimal height;
+    private LocalDateTime dateTime;
     private Address address;
 }
