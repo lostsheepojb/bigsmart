@@ -1,4 +1,4 @@
-package cn.bigsmart.web.config;
+package cn.bigsmart.web.exception;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,4 +1,4 @@
-package cn.bigsmart.web.config;
+package cn.bigsmart.web.exception;
 
 import cn.bigsmart.base.errocode.ClientErrorCodeEnum;
 import cn.bigsmart.base.exception.AbstractException;
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
         String msg = Optional.ofNullable(firstFieldError)
                 .map(FieldError::getDefaultMessage)
                 .orElse("");
-        log.error("[{}]{}, [msg]{}", request.getMethod(), getUrl(request), msg);
+        log.error("[{}]{}, {}", request.getMethod(), getUrl(request), msg);
         return ResultUtils.failure(ClientErrorCodeEnum.REQUEST_ARGUMENT_ERROR.code(), msg);
     }
 
@@ -51,7 +51,7 @@ public class GlobalExceptionHandler {
         String msg = Optional.ofNullable(firstFieldError)
                 .map(FieldError::getDefaultMessage)
                 .orElse("");
-        log.error("[{}]{}, [msg]{}", request.getMethod(), getUrl(request), msg);
+        log.error("[{}]{}, {}", request.getMethod(), getUrl(request), msg);
         return ResultUtils.failure(ClientErrorCodeEnum.REQUEST_ARGUMENT_ERROR.code(), msg);
     }
 
@@ -61,7 +61,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = ConstraintViolationException.class)
     public Result validExceptionHandler(HttpServletRequest request, ConstraintViolationException e) {
         String msg = e.getConstraintViolations().stream().map(cv -> cv.getMessage()).collect(Collectors.joining(","));
-        log.error("[{}]{}, [msg]{}", request.getMethod(), getUrl(request), msg);
+        log.error("[{}]{}, {}", request.getMethod(), getUrl(request), msg);
         return ResultUtils.failure(ClientErrorCodeEnum.REQUEST_ARGUMENT_ERROR.code(), msg);
     }
 
@@ -71,10 +71,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = {AbstractException.class})
     public Result abstractException(HttpServletRequest request, AbstractException ex) {
         if (ex.getCause() != null) {
-            log.error("[{}] {} [msg] {}", request.getMethod(), request.getRequestURL().toString(), ex.toString(), ex.getCause());
+            log.error("[{}]{}, {}, cause by : ", request.getMethod(), request.getRequestURL().toString(), ex.toString(), ex.getCause());
             return ResultUtils.failure(ex);
         }
-        log.error("[{}] {} [msg] {}", request.getMethod(), request.getRequestURL().toString(), ex.toString());
+        log.error("[{}]{}, {}", request.getMethod(), request.getRequestURL().toString(), ex.toString());
         return ResultUtils.failure(ex);
     }
 

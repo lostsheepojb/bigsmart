@@ -1,6 +1,5 @@
 package cn.bigsmart.web.initialization;
 
-import cn.bigsmart.web.config.WebAutoConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public final class InitializeDispatcherServletController {
 
-    @GetMapping(WebAutoConfig.INITIALIZE_PATH)
+    @GetMapping(InitializeAutoConfig.INITIALIZE_PATH)
     public void initializeDispatcherServlet() {
         log.info("Initialized the dispatcherServlet to improve the first response time of the interface...");
     }

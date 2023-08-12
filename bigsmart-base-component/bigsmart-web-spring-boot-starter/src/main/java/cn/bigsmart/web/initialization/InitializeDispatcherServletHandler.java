@@ -1,6 +1,5 @@
 package cn.bigsmart.web.initialization;
 
-import cn.bigsmart.web.config.WebAutoConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -27,7 +26,7 @@ public final class InitializeDispatcherServletHandler implements CommandLineRunn
                 protocol,
                 configurableEnvironment.getProperty("server.port", "8080"),
                 configurableEnvironment.getProperty("server.servlet.context-path", ""),
-                WebAutoConfig.INITIALIZE_PATH);
+                InitializeAutoConfig.INITIALIZE_PATH);
         try {
             restTemplate.execute(url, HttpMethod.GET, null, null);
         } catch (Throwable e) {
