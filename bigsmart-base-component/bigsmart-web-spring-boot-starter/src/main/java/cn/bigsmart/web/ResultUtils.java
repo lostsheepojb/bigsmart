@@ -1,7 +1,8 @@
-package cn.bigsmart.base.result;
+package cn.bigsmart.web;
 
 import cn.bigsmart.base.errocode.ServiceErrorCodeEnum;
 import cn.bigsmart.base.exception.AbstractException;
+import cn.bigsmart.base.result.Result;
 
 import java.util.Optional;
 
@@ -41,7 +42,7 @@ public class ResultUtils {
      *
      * @return
      */
-    protected static Result<Void> failure() {
+    public static Result<Void> failure() {
         Result<Void> result = new Result<>();
         result.setCode(ServiceErrorCodeEnum.SERVICE_ERROR.code());
         result.setMessage(ServiceErrorCodeEnum.SERVICE_ERROR.message());
@@ -55,7 +56,7 @@ public class ResultUtils {
      * @param abstractException
      * @return
      */
-    protected static Result<Void> failure(AbstractException abstractException) {
+    public static Result<Void> failure(AbstractException abstractException) {
         String errorCode = Optional.ofNullable(abstractException.getErrorCode()).orElse(ServiceErrorCodeEnum.SERVICE_ERROR.code());
         String errorMessage = Optional.ofNullable(abstractException.getErrorMessage()).orElse(ServiceErrorCodeEnum.SERVICE_ERROR.message());
         Result<Void> result = new Result<>();
@@ -71,7 +72,7 @@ public class ResultUtils {
      * @param errorMessage
      * @return
      */
-    protected static Result<Void> failure(String errorCode, String errorMessage) {
+    public static Result<Void> failure(String errorCode, String errorMessage) {
         Result<Void> result = new Result<>();
         result.setCode(errorCode);
         result.setMessage(errorMessage);

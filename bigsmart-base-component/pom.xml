@@ -20,6 +20,8 @@
         <module>bigsmart-designpattern-spring-boot-starter</module>
         <!--项目公共工具组件-->
         <module>bigsmart-common</module>
+        <!--web项目公共工具组件-->
+        <module>bigsmart-web-spring-boot-starter</module>
     </modules>
 
 </project>
