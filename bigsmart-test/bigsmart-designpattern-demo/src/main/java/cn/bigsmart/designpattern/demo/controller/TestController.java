@@ -4,6 +4,8 @@ import cn.bigsmart.base.result.Result;
 import cn.bigsmart.designpattern.chain.ChainContext;
 import cn.bigsmart.designpattern.strategy.StrategySelector;
 import cn.bigsmart.web.ResultUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,7 @@ import java.math.BigDecimal;
 @RestController
 @AllArgsConstructor
 @Validated
+@Api(tags = "测试")
 public class TestController {
 
     private final StrategySelector strategySelector;
@@ -32,7 +35,7 @@ public class TestController {
     }
 
     @GetMapping("/chain/execute")
-    public Result pay(String key, HttpServletRequest request) {
+    public Result chain(String key, HttpServletRequest request) {
 
         chainContext.execute(key, request);
 
@@ -50,6 +53,7 @@ public class TestController {
     }
 
     @GetMapping("/get")
+    @ApiOperation("get方法测试")
     public Result get(@Validated TestReqArg arg) {
 
         if (arg.getId() == 1) {

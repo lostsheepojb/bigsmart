@@ -15,6 +15,7 @@
         <module>bigsmart-bff</module>
         <!--网关-->
         <module>bigsmart-gateway</module>
+        <!--测试模块-->
         <module>bigsmart-test</module>
     </modules>
 
@@ -27,15 +28,14 @@
         <spring-cloud-alibaba.version>2.2.9.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
         <spring-cloud-openfeign.version>3.1.1</spring-cloud-openfeign.version>
+        <swagger-knife4j.version>3.0.3</swagger-knife4j.version>
         <lombok.version>1.18.8</lombok.version>
-        <swagger2.version>2.9.2</swagger2.version>
-        <swagger-ui.version>1.9.0</swagger-ui.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
+        <connection-pool-druid.version>1.2.11</connection-pool-druid.version>
         <gson.version>2.9.1</gson.version>
         <redisson.version>3.15.6</redisson.version>
         <mysql-connector.version>8.0.29</mysql-connector.version>
         <mybatis.version>2.2.2</mybatis.version>
-        <connection-pool-druid.version>1.2.11</connection-pool-druid.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
     </properties>
 
@@ -111,6 +111,12 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+            <!--API文档-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${swagger-knife4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

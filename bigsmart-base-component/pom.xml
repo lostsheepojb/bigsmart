@@ -22,6 +22,8 @@
         <module>bigsmart-common</module>
         <!--web项目公共工具组件-->
         <module>bigsmart-web-spring-boot-starter</module>
+        <!--API文档公共工具组件-->
+        <module>bigsmart-swagger-spring-boot-starter</module>
     </modules>
 
 </project>
